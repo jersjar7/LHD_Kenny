@@ -1,0 +1,24 @@
+name: arc
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - pandas
+  - geopandas
+  - gdal
+  - pip
+  - netCDF4
+  - xarray
+  - geojson
+  - networkx
+  - dask
+  - numba
+  - scipy
+  - tqdm
+  - pyproj
+  - fiona
+  - shapely
+  - s3fs
+
+

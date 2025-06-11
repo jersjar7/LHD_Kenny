@@ -1,0 +1,61 @@
+ [build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arc"
+description = "Wrapper package for using ARC, by Mike Follum -> https://github.com/MikeFHS/automated-rating-curve/tree/main"
+dynamic = ["version"]
+dependencies = [
+  "numpy",
+  "matplotlib",
+  "pandas",
+  "geopandas",
+  "gdal",
+  "pip",
+  "netCDF4",
+  "xarray",
+  "geojson",
+  "networkx",
+  "dask",
+  "numba",
+  "scipy",
+  "tqdm",
+  "pyproj",
+  "fiona",
+  "shapely",
+  "s3fs",
+  "numba"
+]
+requires-python = ">= 3.10"
+authors = [
+    {name = "Mike Follum", email = "mike@follumhydro.com"},
+    {name = "Joseph Gutenson", email = "joseph@follumhydro.com"},
+    {name = "Drew Loney", email = "drew@follumhydro.com"},
+    {name = "Louis 'Ricky' Rosas", email = "lrr43@byu.edu"},
+]
+maintainers = [
+    {name = "Mike Follum", email = "mike@follumhydro.com"},
+    {name = "Joseph Gutenson", email = "joseph@follumhydro.com"},
+    {name = "Drew Loney", email = "drew@follumhydro.com"},
+    {name = "Louis 'Ricky' Rosas", email = "lrr43@byu.edu"},
+]
+license = { text = "BSD-3-Clause" }
+readme = "README.md"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "arc.__version__" }
+
+[project.scripts]
+arc = "arc.arc:_main"
+curve-to-geojson-stream-vector = "arc.Create_GeoJSON:main_Run_Main_Curve_to_GEOJSON_Program_Stream_Vector"
+write-seed-stream-raster = "arc.Create_GeoJSON:main_write_seed"
